@@ -3,8 +3,8 @@
     <h1><%= @project.name %></h1>
   </header>
 
-  <header>
-    <h1><%= @ticket.name %></h1>
+  <header id="ticket">
+    <h2><%= @ticket.name %></h2>
   </header>
 
   <%= simple_format(@ticket.description) %>
