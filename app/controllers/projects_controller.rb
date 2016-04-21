@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    # set_project called before
+    authorize @project, :show?
   end
 
   def edit
