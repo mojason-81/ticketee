@@ -10,11 +10,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    # set_project called before
+    authorize @project, :update?
   end
 
   def update
-    # set_project called before
+    authorize @project, :update?
     if @project.update(project_params)
       flash[:notice] = "Project has been updated."
       redirect_to @project
