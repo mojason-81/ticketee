@@ -18,12 +18,14 @@
     </table>
 
     <ul class="actions">
+      <% if policy(@ticket).update? %>
       <li>
         <!-- Below we have ...[:edit, @project, @ticket]... this is the
              same to Rails as edit_project_ticket_path(@project, @ticket).
         -->
         <%= link_to "Edit Ticket", [:edit, @project, @ticket], class: "edit" %>
       </li>
+      <% end %>
       <li>
         <%= link_to "Delete Ticket", [@project, @ticket], method: :delete,
           data: { confirm: "Are you sure you want to delete this ticket?" },
