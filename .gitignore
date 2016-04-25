@@ -19,3 +19,5 @@
 # Ignore database setup.
 /config/database.yml
 
+# Ignore uploaded files
+public/uploads
