@@ -39,6 +39,8 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 3.5.6'
 gem "pundit", '~> 1.1.0'
 
+gem 'carrierwave', '~> 0.11.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

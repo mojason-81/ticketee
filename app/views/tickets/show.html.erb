@@ -1,21 +1,10 @@
-<div>
+<div id="ticket">
   <header>
     <h1><%= @project.name %></h1>
   </header>
 
-  <header id="ticket">
+  <header>
     <h2><%= @ticket.name %></h2>
-
-    <table id="attributes">
-      <tr>
-        <th>Author:</th>
-        <td><%= @ticket.author.email %></td>
-      </tr>
-      <tr>
-        <th>Created:</th>
-        <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
-      </tr>
-    </table>
 
     <ul class="actions">
       <% if policy(@ticket).update? %>
@@ -36,5 +25,26 @@
     </ul>
   </header>
 
+  <table id="attributes">
+    <tr>
+      <th>Author:</th>
+      <td><%= @ticket.author.email %></td>
+    </tr>
+    <tr>
+      <th>Created:</th>
+      <td><%= time_ago_in_words(@ticket.created_at) %> ago</td>
+    </tr>
+  </table>
+
   <%= simple_format(@ticket.description) %>
+
+  <% if @ticket.attachment.present? %>
+    <h4>Attachment</h4>
+    <div class="attachment">
+      <p>
+        <%= link_to File.basename(@ticket.attachment.url), @ticket.attachment.url %>
+        (<%= number_to_human_size(@ticket.attachment.size) %>)
+      </p>
+    </div>
+  <% end %>
 </div>
