@@ -35,3 +35,20 @@ blockquote.comment p {
 #tickets li, #states li{
   padding-bottom: 0.625em;
 }
+
+.tag {
+  @extend .state;
+  @extend .label-info;
+  margin-right: 0.625em;
+
+  a {
+    color: white;
+
+    &.remove {
+      font-family: "FontAwesome";
+      @extend .fa-close;
+      margin-right: 0.5em;
+      text-decoration: none;
+    }
+  }
+}
