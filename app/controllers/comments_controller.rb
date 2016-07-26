@@ -2,18 +2,31 @@ class CommentsController < ApplicationController
   before_action :set_ticket
 
   def create
-    @comment = @ticket.comments.build(sanitized_parameters)
-    @comment.author = current_user
-    authorize @comment, :create?
+    @creator = CommentCreator.build(@ticket.comments, current_user, sanitized_parameters)
+    authorize @creator.comment, :create?
 
-    if @comment.save
+    if @creator.save
       flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
     else
       flash.now[:alert] = "Comment has not been created."
       @project = @ticket.project
+      @comment = @creator.comment
       render "tickets/show"
     end
+
+    #@comment = @ticket.comments.build(sanitized_parameters)
+    #@comment.author = current_user
+    #authorize @comment, :create?
+
+    #if @comment.save
+    #  flash[:notice] = "Comment has been created."
+    #  redirect_to [@ticket.project, @ticket]
+    #else
+    #  flash.now[:alert] = "Comment has not been created."
+    #  @project = @ticket.project
+    #  render "tickets/show"
+    #end
   end
 
   private
