@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.3.0"
 
 gem 'rails', '4.2.6'
 # Use PostgreSQL as the database for Active Record
@@ -28,7 +29,10 @@ gem "searcher", github: "radar/searcher"
 
 gem 'carrierwave', '~> 0.11.0'
 
-gem "rails_12factor", group: :production
+group :production do
+  gem "puma", "3.6.0"
+  gem "rails_12factor", "0.0.3"
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
