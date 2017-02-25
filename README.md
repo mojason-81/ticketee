@@ -6,7 +6,7 @@ Rails 4 in Action sample application.
 
 Sample ticketing and project application.
 
-### How do I get set up? ###
+### Brief versions and testing info ###
 
 * Tested with Ruby 2.3.3 and Rails 4.2.7
 * Test via `bundle exec rspec spec`
