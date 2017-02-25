@@ -8,7 +8,7 @@ Sample ticketing and project application.
 
 ### Brief versions and testing info ###
 
-* Tested with Ruby 2.3.3 and Rails 4.2.7
+* Tested with Ruby 2.3.3 and Rails 4.2.6
 * Test via `bundle exec rspec spec`
 
 ### Who do I talk to? ###
