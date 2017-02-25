@@ -1,27 +1,15 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Rails 4 in Action sample application.
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Sample ticketing and project application.
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+* Tested with Ruby 2.3.3 and Rails 4.2.7
+* Test via `bundle exec rspec spec`
 
 ### Who do I talk to? ###
 
